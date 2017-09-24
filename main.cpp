@@ -71,8 +71,28 @@ public:
         }
         std::cout << " ----- ----- ----- " << std::endl;
     }
+
 private:
     std::vector<int> m_cells;
+};
+
+class SudokuGridSolver
+{
+public:
+    SudokuGridSolver(const SudokuGrid& grid):
+        m_gridToSolve(grid)
+      , m_result(grid)
+    {
+    }
+
+
+    SudokuGrid execute() const
+    {
+        return m_result;
+    }
+private:
+    SudokuGrid m_gridToSolve;
+    SudokuGrid m_result;
 };
 
 int main()
@@ -132,6 +152,11 @@ int main()
     gridContent[8+8*9] = 7;
     grid.setInitialValues(gridContent);
     grid.print();
+
+    SudokuGridSolver solver(grid);
+    SudokuGrid result = solver.execute();
+    result.print();
+
 
     std::cout << "Hello World!" << std::endl;
     return 0;
