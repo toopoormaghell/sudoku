@@ -18,6 +18,59 @@ public:
             i++;
         }
     }
+
+    void print() const
+    {
+        std::cout << " ----- ----- ----- " << std::endl;
+        for (int j=0; j<3; ++j)
+        {
+            std::cout << "|";
+            int i=0;
+            for (i=0; i<2; ++i)
+                std::cout << m_cells[i+j*9] << " ";
+            std::cout << m_cells[i+j*9] << "|";
+            for (i=3; i<5; ++i)
+                std::cout << m_cells[i+j*9] << " ";
+            std::cout << m_cells[i+j*9] << "|";
+            for (i=6; i<8; ++i)
+                std::cout << m_cells[i+j*9] << " ";
+            std::cout << m_cells[i+j*9] << "|";
+            std::cout << std::endl;
+        }
+        std::cout << " ----- ----- ----- " << std::endl;
+        for (int j=3; j<6; ++j)
+        {
+            std::cout << "|";
+            int i=0;
+            for (i=0; i<2; ++i)
+                std::cout << m_cells[i+j*9] << " ";
+            std::cout << m_cells[i+j*9] << "|";
+            for (i=3; i<5; ++i)
+                std::cout << m_cells[i+j*9] << " ";
+            std::cout << m_cells[i+j*9] << "|";
+            for (i=6; i<8; ++i)
+                std::cout << m_cells[i+j*9] << " ";
+            std::cout << m_cells[i+j*9] << "|";
+            std::cout << std::endl;
+        }
+        std::cout << " ----- ----- ----- " << std::endl;
+        for (int j=6; j<9; ++j)
+        {
+            std::cout << "|";
+            int i=0;
+            for (i=0; i<2; ++i)
+                std::cout << m_cells[i+j*9] << " ";
+            std::cout << m_cells[i+j*9] << "|";
+            for (i=3; i<5; ++i)
+                std::cout << m_cells[i+j*9] << " ";
+            std::cout << m_cells[i+j*9] << "|";
+            for (i=6; i<8; ++i)
+                std::cout << m_cells[i+j*9] << " ";
+            std::cout << m_cells[i+j*9] << "|";
+            std::cout << std::endl;
+        }
+        std::cout << " ----- ----- ----- " << std::endl;
+    }
 private:
     std::vector<int> m_cells;
 };
@@ -78,6 +131,7 @@ int main()
     gridContent[4+8*9] = 3;
     gridContent[8+8*9] = 7;
     grid.setInitialValues(gridContent);
+    grid.print();
 
     std::cout << "Hello World!" << std::endl;
     return 0;
