@@ -5,6 +5,9 @@
 typedef int ItemType;
 // Default value for an item of the grid
 static const ItemType d = -12;
+// Type for a grid of items
+typedef std::vector<ItemType> GridType;
+
 
 int main()
 {
@@ -23,7 +26,7 @@ int main()
     // |8   7|    6|    1| 7
     // |  9 5|  3  |    7| 8
     //  ----- ----- -----
-    const std::vector<ItemType> gridContent
+    const GridType gridContent
     {
             9, d, d, d, 2, d, 7, 1, d,
             6, d, d, 5, d, d, 4, d, 2,
@@ -51,7 +54,7 @@ int main()
     // |8 4 7|2 5 6|3 9 1| 7
     // |2 9 5|1 3 4|8 6 7| 8
     //  ----- ----- -----
-    const std::vector<ItemType> gridSolution
+    const GridType gridSolution
     {
             9, 8, 4, 6, 2, 3, 7, 1, 5,
             6, 7, 3, 5, 1, 9, 4, 8, 2,
